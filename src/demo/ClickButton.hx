@@ -1,5 +1,6 @@
 package demo;
 
+import core.PlayerProfile;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
@@ -83,6 +84,10 @@ class ClickButton extends Sprite
             return;
         }
         
+        //Add a click
+        PlayerProfile.addClick();
+        dispatchEvent(new ScoreEvent(ScoreEvent.SCORE_CHANGED));
+
         m_isDown = false;
         drawButton();
     }
